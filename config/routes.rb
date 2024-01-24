@@ -8,4 +8,13 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   get '/test', to: 'test#show'
-end
+
+  namespace :api do
+    namespace :v1 do
+      resources :members do
+        resources :facts
+      end
+    end
+  end
+
+end 
